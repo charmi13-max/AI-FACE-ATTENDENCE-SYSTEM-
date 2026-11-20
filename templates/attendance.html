@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Attendance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="nav">
+        <div class="brand">AI Face Attendance</div>
+        <div class="links">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('attendance') }}">Attendance</a>
+            <a href="{{ url_for('reports') }}">Reports</a>
+        </div>
+    </nav>
+
+    <main class="container small">
+        <h1>Mark Attendance</h1>
+        <div id="camera-section" class="panel">
+            <video id="video" autoplay playsinline width="640" height="480"></video>
+            <canvas id="captureCanvas" width="640" height="480" style="display:none;"></canvas>
+            <div class="actions">
+                <button id="captureBtn" type="button">Capture and Mark</button>
+            </div>
+            <div id="result" class="alert hidden"></div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
